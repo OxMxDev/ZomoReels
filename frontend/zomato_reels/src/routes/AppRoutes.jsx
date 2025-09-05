@@ -6,6 +6,7 @@ import FoodPartnerLogin from "../pages/FoodPartnerLogin"
 import FoodPartnerRegister from "../pages/FoodPartnerRegister";
 import Home from "../pages/general/Home";
 import CreateFood from "../pages/food-partner/CreateFood";
+import Profile from "../pages/food-partner/Profile";
 
 export default function AppRoutes() {
 	return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
 				<Route path="/" element={<UserLogin />} />
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/create-food" element={<CreateFood/>}/>
+				<Route path="/food-partner/:id" element={<Profile/>}/>
 			</Routes>
 		</BrowserRouter>
 	);

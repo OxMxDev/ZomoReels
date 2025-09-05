@@ -1,0 +1,222 @@
+@import "./variables-light.css";
+
+/* Fallback for dark mode to follow system theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #071024;
+		--card-bg: rgba(10, 14, 23, 0.7);
+		--muted: #9aa4b2;
+		--text: #e6eef5;
+		--primary: #06b6d4;
+		--primary-contrast: #021226;
+		--input-bg: rgba(255, 255, 255, 0.02);
+		--border: rgba(255, 255, 255, 0.06);
+		--radius: 12px;
+		--shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+		--gap: 16px;
+		--glass: rgba(255, 255, 255, 0.03);
+		--font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+			Roboto, "Helvetica Neue", Arial;
+	}
+}
+
+/* Mobile-first Create Food form styles, using project variables */
+
+.create-food-page {
+	padding: 16px;
+	display: flex;
+	justify-content: center;
+}
+
+.cf-card {
+	width: 100%;
+	max-width: 720px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	color: var(--text);
+}
+
+.cf-title {
+	margin: 0;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.cf-field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.cf-label {
+	font-size: 0.95rem;
+	color: var(--muted);
+}
+
+.cf-input[type="file"] {
+	padding: 6px 0;
+}
+
+/* Hide the browser file input UI and use a styled dropzone */
+.cf-file-input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.cf-input[type="text"],
+.cf-textarea {
+	padding: 10px 12px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: var(--input-bg);
+	color: var(--text);
+	outline: none;
+	font-size: 0.95rem;
+}
+
+.cf-textarea {
+	resize: vertical;
+}
+
+.cf-video-preview {
+	margin-top: 8px;
+	border-radius: 8px;
+	overflow: hidden;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+}
+
+.cf-video {
+	width: 100%;
+	height: auto;
+	display: block;
+	background: #000;
+}
+
+.cf-error {
+	color: #b91c1c;
+	background: rgba(185, 28, 28, 0.06);
+	padding: 8px 10px;
+	border-radius: 8px;
+	font-size: 0.95rem;
+}
+
+/* Dropzone */
+.cf-dropzone {
+	border: 1px dashed var(--border);
+	border-radius: 10px;
+	padding: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent);
+	transition: border-color 0.15s ease, background 0.15s ease,
+		transform 0.12s ease;
+}
+.cf-dropzone:hover {
+	transform: translateY(-2px);
+}
+.cf-dropzone:active {
+	transform: translateY(0);
+}
+.cf-dropzone:focus {
+	outline: none;
+}
+
+.cf-drop-inner {
+	text-align: center;
+	color: var(--muted);
+}
+.cf-drop-inner svg {
+	color: var(--primary);
+	display: block;
+	margin: 0 auto 8px;
+}
+.cf-drop-text {
+	font-weight: 700;
+	color: var(--text);
+}
+.cf-drop-muted {
+	font-size: 0.85rem;
+	color: var(--muted);
+	margin-top: 6px;
+}
+
+.cf-dropzone.has-preview {
+	padding: 6px;
+}
+
+/* Make the video preview tightly fit inside the drop area when present */
+.cf-dropzone.has-preview .cf-video-preview {
+	margin: 0;
+	border-radius: 8px;
+}
+
+/* small screens: keep dropzone vertical spacing comfortable */
+@media (max-width: 420px) {
+	.cf-dropzone {
+		padding: 14px;
+	}
+	.cf-drop-inner svg {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+.cf-actions {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	margin-top: 6px;
+}
+
+.cf-btn {
+	padding: 10px 14px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: transparent;
+	color: var(--text);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.cf-btn-primary {
+	background: var(--primary);
+	color: var(--primary-contrast);
+	border: none;
+}
+
+.cf-btn-ghost {
+	background: transparent;
+}
+
+/* responsive: tablet and up */
+@media (min-width: 680px) {
+	.cf-card {
+		padding: 20px;
+		gap: 16px;
+	}
+	.cf-actions {
+		justify-content: flex-end;
+	}
+}
+
+@media (min-width: 980px) {
+	.create-food-page {
+		padding: 24px;
+	}
+}

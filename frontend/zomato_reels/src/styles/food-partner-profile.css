@@ -1,0 +1,155 @@
+@import "./variables-light.css";
+
+/* Provide dark theme fallback based on system preference (same approach as other pages) */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #071024;
+		--card-bg: rgba(10, 14, 23, 0.7);
+		--muted: #9aa4b2;
+		--text: #e6eef5;
+		--primary: #06b6d4;
+		--primary-contrast: #021226;
+		--input-bg: rgba(255, 255, 255, 0.02);
+		--border: rgba(255, 255, 255, 0.06);
+		--radius: 12px;
+		--shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+		--gap: 16px;
+		--glass: rgba(255, 255, 255, 0.03);
+		--font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+			Roboto, "Helvetica Neue", Arial;
+	}
+	/* override tile colors for dark mode */
+	:root {
+		--tile-bg: rgba(255, 255, 255, 0.04);
+		--tile-text: var(--text);
+	}
+}
+
+/* Default (light) tile variables */
+:root {
+	--tile-bg: #111827;
+	--tile-text: #ffffff;
+}
+
+.fp-profile {
+	max-width: 420px;
+	margin: 18px auto;
+	padding: 18px;
+	background: linear-gradient(180deg, var(--bg), var(--bg));
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	font-family: var(--font-family);
+	color: var(--text);
+}
+
+.fp-header {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+
+.fp-avatar {
+	width: 88px;
+	height: 88px;
+	border-radius: 50%;
+	background: var(--primary);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08) inset;
+	flex-shrink: 0;
+}
+
+.fp-info {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex: 1;
+}
+
+.fp-name-chip,
+.fp-address-chip {
+	display: inline-block;
+	padding: 10px 12px;
+	border-radius: 6px;
+	background: var(--primary);
+	color: var(--primary-contrast);
+	font-weight: 600;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.fp-address-chip {
+	width: 180px;
+}
+
+.fp-stats {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 18px;
+	gap: 12px;
+}
+
+.fp-stat {
+	text-align: center;
+	flex: 1;
+}
+
+.fp-stat-label {
+	color: var(--muted);
+	font-size: 14px;
+}
+
+.fp-stat-value {
+	margin-top: 6px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.fp-divider {
+	margin: 18px -18px 12px -18px;
+	border: 0;
+	height: 1px;
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.01));
+}
+
+.fp-videos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	padding-bottom: 12px;
+}
+
+.fp-video-tile {
+	min-height: 88px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fp-video-placeholder {
+	width: 100%;
+	padding-top: 66%; /* 3:2 ratio box */
+	background: var(--tile-bg);
+	color: var(--tile-text);
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	letter-spacing: 0.6px;
+}
+
+/* responsive */
+@media (max-width: 520px) {
+	.fp-profile {
+		padding: 14px;
+	}
+	.fp-name-chip {
+		font-size: 15px;
+		padding: 8px 10px;
+	}
+	.fp-address-chip {
+		width: 140px;
+	}
+	.fp-video-placeholder {
+		padding-top: 70%;
+	}
+}

@@ -77,7 +77,7 @@ export default function Home() {
 							{r.description}
 						</div>
 
-						<Link className="visit-btn" to={"/food-partner" + r.foodPartner}>
+						<Link className="visit-btn" to={"/food-partner/" + r.foodPartner}>
 							Visit store
 						</Link>
 					</div>
