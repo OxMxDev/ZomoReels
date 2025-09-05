@@ -83,7 +83,7 @@ async function logoutUser(req, res) {
 
 // foodPartner authentication
 async function registerFoodPartner(req, res) {
-	const { fullName, email, password } = req.body;
+	const { fullName, email, password, phone, address, contactName } = req.body;
 
 	const isAccountAlreadyExists = await foodPartnerModel.findOne({
 		email,
@@ -95,11 +95,19 @@ async function registerFoodPartner(req, res) {
 		});
 	}
 
+	if(phone.length !== 10){
+		return res.status(400).json({
+			message: "Phone number should be 10 digits long",
+		});
+	}
 	const hashPassword = await bcrypt.hash(password, 10);
 	const foodPartner = await foodPartnerModel.create({
 		fullName,
 		email,
 		password: hashPassword,
+		phone,
+		address,
+		contactName,
 	});
 
 	const token = jwt.sign(
@@ -117,6 +125,9 @@ async function registerFoodPartner(req, res) {
 			_id: foodPartner._id,
 			name: foodPartner.fullName,
 			email: foodPartner.email,
+			phone: foodPartner.phone,
+			address: foodPartner.address,
+			contactName: foodPartner.contactName,
 		},
 	});
 }
