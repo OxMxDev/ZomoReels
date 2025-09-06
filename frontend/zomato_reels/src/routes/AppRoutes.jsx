@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserLogin from "../pages/UserLogin";
 import UserRegister from "../pages/UserRegister";
-import FoodPartnerLogin from "../pages/FoodPartnerLogin"
+import FoodPartnerLogin from "../pages/FoodPartnerLogin";
 import FoodPartnerRegister from "../pages/FoodPartnerRegister";
 import Home from "../pages/general/Home";
 import CreateFood from "../pages/food-partner/CreateFood";
 import Profile from "../pages/food-partner/Profile";
+import Saved from "../pages/general/Saved";
 
 export default function AppRoutes() {
 	return (
@@ -15,11 +16,15 @@ export default function AppRoutes() {
 				<Route path="/user/login" element={<UserLogin />} />
 				<Route path="/user/register" element={<UserRegister />} />
 				<Route path="/food-partner/login" element={<FoodPartnerLogin />} />
-				<Route path="/food-partner/register" element={<FoodPartnerRegister />} />
+				<Route
+					path="/food-partner/register"
+					element={<FoodPartnerRegister />}
+				/>
 				<Route path="/" element={<UserLogin />} />
-                <Route path="/home" element={<Home/>}/>
-                <Route path="/create-food" element={<CreateFood/>}/>
-				<Route path="/food-partner/:id" element={<Profile/>}/>
+				<Route path="/home" element={<Home />} />
+				<Route path="/create-food" element={<CreateFood />} />
+				<Route path="/food-partner/:id" element={<Profile />} />
+				<Route path="/saved" element={<Saved/>}/>
 			</Routes>
 		</BrowserRouter>
 	);

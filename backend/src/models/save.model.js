@@ -8,9 +8,13 @@ const saveSchema = new mongoose.Schema({
     },
     food:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Food",
+        ref:"food",
         required:true
     }
 },{
     timestamps:true
 })
+
+const saveModel = mongoose.model("save", saveSchema);
+
+module.exports = saveModel;
