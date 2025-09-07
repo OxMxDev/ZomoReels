@@ -54,7 +54,7 @@ const Saved = () => {
 
 	useEffect(() => {
 		axios
-			.get(`https://zomo-reels-1avw.vercel.app/api/food/save`, {
+			.get(`https://zomo-reels.vercel.app/api/food/save`, {
 				withCredentials: true,
 			})
 			.then((response) => {

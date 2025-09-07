@@ -36,7 +36,7 @@ const CreateFood = () => {
     formData.append('video',videoFile)
 
     const response = await axios.post(
-			"https://zomo-reels-1avw.vercel.app/api/food",
+			"https://zomo-reels.vercel.app/api/food",
 			formData,
 			{
 				withCredentials: true,

@@ -15,7 +15,7 @@ export default function PartnerRegister() {
 		const address = e.target.address.value
 
 		const response = await axios.post(
-			"https://zomo-reels-1avw.vercel.app/api/auth/food-partner/register",
+			"https://zomo-reels.vercel.app/api/auth/food-partner/register",
 			{
 				fullName: businessName,
 				contactName,

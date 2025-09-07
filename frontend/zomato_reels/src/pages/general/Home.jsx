@@ -90,7 +90,7 @@ export default function Home() {
 
 	useEffect(() => {
 		axios
-			.get("https://zomo-reels-1avw.vercel.app/api/food", {
+			.get("https://zomo-reels.vercel.app/api/food", {
 				withCredentials: true,
 			})
 			.then((response) => {
@@ -144,7 +144,7 @@ export default function Home() {
 
 	async function likeVideo(r){
 		const response = await axios.post(
-			`https://zomo-reels-1avw.vercel.app/api/food/like`,
+			`https://zomo-reels.vercel.app/api/food/like`,
 			{ foodId: r._id },
 			{
 				withCredentials: true,
@@ -173,7 +173,7 @@ export default function Home() {
 
 	async function bookmarkVideo(r){
 		const response = await axios.post(
-			`https://zomo-reels-1avw.vercel.app/api/food/save`,
+			`https://zomo-reels.vercel.app/api/food/save`,
 			{ foodId: r._id },
 			{ withCredentials: true }
 		);

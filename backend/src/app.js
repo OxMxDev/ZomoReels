@@ -11,7 +11,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(
 	cors({
-		origin: "https://zomo-reels.vercel.app/",
+		origin: "https://zomo-reels-gkv9.vercel.app/",
 		credentials: true,
 	})
 );
