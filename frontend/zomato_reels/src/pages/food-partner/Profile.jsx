@@ -9,7 +9,7 @@ const Profile = () => {
 	const [videos,setVideos] = useState([])
     useEffect(() => {
 			axios
-				.get(`http://localhost:3000/api/food-partner/${id}`, {
+				.get(`https://zomo-reels-1avw.vercel.app/api/food-partner/${id}`, {
 					withCredentials: true,
 				})
 				.then((response) => {

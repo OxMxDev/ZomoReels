@@ -14,16 +14,20 @@ export default function PartnerRegister() {
 		const password = e.target.password.value
 		const address = e.target.address.value
 
-		const response = await axios.post("http://localhost:3000/api/auth/food-partner/register",{
-			fullName:businessName,
-			contactName,
-			phone,	
-			address,
-			email,
-			password,
-		},{
-			withCredentials:true
-		})
+		const response = await axios.post(
+			"https://zomo-reels-1avw.vercel.app/api/auth/food-partner/register",
+			{
+				fullName: businessName,
+				contactName,
+				phone,
+				address,
+				email,
+				password,
+			},
+			{
+				withCredentials: true,
+			}
+		);
 
 		console.log(response.data);
 		navigate("/create-food")

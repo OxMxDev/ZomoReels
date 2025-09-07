@@ -16,7 +16,7 @@ async function getFoodPartnerById(req,res){
             ...foodPartner.toObject(),
             foodItems:foodItemsByFoodPartner
         }
-    })
+    })  
 }
 
 module.exports = {getFoodPartnerById}

@@ -9,12 +9,16 @@ export default function PartnerLogin() {
 		const email = e.target.email.value
 		const password = e.target.pass.value
 
-		const response = await axios.post("http://localhost:3000/api/auth/food-partner/login",{
-			email,
-			password
-		},{
-			withCredentials:true
-		})
+		const response = await axios.post(
+			"https://zomo-reels-1avw.vercel.app/api/auth/food-partner/login",
+			{
+				email,
+				password,
+			},
+			{
+				withCredentials: true,
+			}
+		);
 		console.log(response.data);
 		navigate("/create-food")
 	}

@@ -8,12 +8,16 @@ export default function UserLogin() {
         e.preventDefault();
         const email = e.target.uemail.value
         const password = e.target.upass.value
-        const response = await axios.post("http://localhost:3000/api/auth/user/login",{
-            email,
-            password
-        },{
-            withCredentials:true
-        })
+        const response = await axios.post(
+					"https://zomo-reels-1avw.vercel.app/api/auth/user/login",
+					{
+						email,
+						password,
+					},
+					{
+						withCredentials: true,
+					}
+				);
         console.log(response.data);
         navigate("/home")
     }

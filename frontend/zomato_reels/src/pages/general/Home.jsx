@@ -90,11 +90,11 @@ export default function Home() {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/api/food", {
+			.get("https://zomo-reels-1avw.vercel.app/api/food", {
 				withCredentials: true,
 			})
 			.then((response) => {
-				console.log(response.data)
+				console.log(response.data);
 				setReels(response.data.food);
 			});
 	}, []);

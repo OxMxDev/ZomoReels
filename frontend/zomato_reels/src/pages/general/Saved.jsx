@@ -54,7 +54,7 @@ const Saved = () => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:3000/api/food/save`, {
+			.get(`https://zomo-reels-1avw.vercel.app/api/food/save`, {
 				withCredentials: true,
 			})
 			.then((response) => {
@@ -65,7 +65,6 @@ const Saved = () => {
 					likeCount: item.food.likeCount,
 					saveCount: item.food.saveCount,
 					commentCount: item.food.commentCount || 0,
-                    
 				}));
 				setVideos(savedFoods);
 			})
