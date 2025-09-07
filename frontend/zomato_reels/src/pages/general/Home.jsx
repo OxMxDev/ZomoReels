@@ -143,9 +143,13 @@ export default function Home() {
 	}, [reels]);
 
 	async function likeVideo(r){
-		const response = await axios.post(`http://localhost:3000/api/food/like`,{foodId:r._id},{
-			withCredentials:true
-		})
+		const response = await axios.post(
+			`https://zomo-reels-1avw.vercel.app/api/food/like`,
+			{ foodId: r._id },
+			{
+				withCredentials: true,
+			}
+		);
 		if(response.data.like){
 			console.log('liked')
 			setReels((prevReels) =>
@@ -168,7 +172,11 @@ export default function Home() {
 	}
 
 	async function bookmarkVideo(r){
-		const response = await axios.post(`http://localhost:3000/api/food/save`,{foodId:r._id},{withCredentials:true})
+		const response = await axios.post(
+			`https://zomo-reels-1avw.vercel.app/api/food/save`,
+			{ foodId: r._id },
+			{ withCredentials: true }
+		);
 		console.log(response)
 		if(response.data.save){
 			console.log('bookmarked')
